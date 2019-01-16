@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update]
   def index
+    @recipes = Recipe.last(6)
+  end
+
+  def show_all
     @recipes = Recipe.all
   end
 
