@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[show edit update]
+  before_action :set_recipe, only: %i(show edit update)
+  # before_action :authenticate_user!, only: %i(new edit update)
+
   def index
     @recipes = Recipe.last(6)
   end

@@ -17,6 +17,21 @@
       <li class="nav-item">
         <%= link_to 'Cadastrar cozinha', new_cuisine_path, class: 'nav-link' %>
       </li>
+      <% unless current_user %>
+        <li class="nav-item">
+          <%= link_to 'Criar Conta', new_user_registration_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Entrar', new_user_session_path, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Bem vindo #{current_user.email}", new_user_registration_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sair', destroy_user_session_path, method: 'DELETE', class: 'nav-link btn btn-warning' %>
+        </li>
+      <% end%>
     </ul>
   </div>
 </nav>

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'User update recipe' do
   scenario 'successfully' do
+
     recipe_type = RecipeType.create(name: 'Sobremesa')
     RecipeType.create(name: 'Entrada')
     cuisine = Cuisine.create(name: 'Brasileira')
